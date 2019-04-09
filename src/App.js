@@ -13,11 +13,11 @@ class App extends React.Component {
   };
 
   handleScore = id => {
-    const notClicked = this.state.clicked.map(() => id === null);
+    const notClicked = this.state.clicked.indexOf(id) > -1;
 
-    if(notClicked) {
+    if(!notClicked) {
       this.state.clicked.push(id);
-      if(this.state.current >= this.state.best){
+      if(this.state.current === this.state.best){
         this.setState({
           pictures: this.state.pictures.sort( 
             function(a,b) { 
@@ -25,8 +25,23 @@ class App extends React.Component {
             }
           ),
           current: this.state.current + 1,
-          best: this.state.current
-        })
+          best: this.state.best + 1
+        },
+          () => {
+            if( this.state.current === 12) {
+              alert("You have Won the Memory Game Congradulations!");
+              this.setState({
+                pictures: this.state.pictures.sort( 
+                  function(a,b) { 
+                    return 0.5 - Math.random();
+                  }
+                ),
+                current: 0,
+                clicked: []
+              })
+            }
+          }
+        )
       }else{
         this.setState({
           pictures: this.state.pictures.sort( 
@@ -35,21 +50,23 @@ class App extends React.Component {
             }
           ),
           current: this.state.current + 1
-        })
-      };
-
-      if( this.state.current = 12){
-        alert("You have Won the Memory Game Congradulations!");
-        this.setState({
-          pictures: this.state.pictures.sort( 
-            function(a,b) { 
-              return 0.5 - Math.random();
+        },
+          () => {
+            if( this.state.current === 12) {
+              alert("You have Won the Memory Game Congradulations!");
+              this.setState({
+                pictures: this.state.pictures.sort( 
+                  function(a,b) { 
+                    return 0.5 - Math.random();
+                  }
+                ),
+                current: 0,
+                clicked: []
+              })
             }
-          ),
-          current: 0,
-          clicked: []
-        })
-      }
+          }
+        )
+      };
     }else{
       this.setState({
         pictures: this.state.pictures.sort( 
@@ -61,6 +78,8 @@ class App extends React.Component {
         clicked: []
       })
     };
+
+  
   };
 
   render() {
@@ -68,7 +87,7 @@ class App extends React.Component {
       <div>
         <Top current={this.state.current} best={this.state.best} />
         <Score />
-        <div class=" container row">
+        <div className="container row">
         {this.state.pictures.map( picture => (
           <Game 
           handleScore={this.handleScore}
