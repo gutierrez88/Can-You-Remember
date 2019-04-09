@@ -1,0 +1,28 @@
+.innerFooter {
+    position: absolute;
+    bottom:0;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(27, 180, 160);
+    margin-bottom: 0px;
+}
+
+.row1 {
+    width: 100%;
+}
+
+.first {
+    color: white;
+    font-size: 28px;
+    
+}
+
+.third {
+    color: white;
+    font-size: 28px;
+}
+
+.logoRyan {
+    height: 100px;
+    width: 133px;
+}
