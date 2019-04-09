@@ -4,15 +4,15 @@ import "./style.css";
 function Top (props) {
   return (
     <div className="top row z-depth-4 valign-wrapper">
-    <div className="col s6 m5 push-m1 currentScore">
+    <div className="col s6 currentScore center-align">
       Current Score: {props.current}
     </div>
-    <div>
+    <div className="">
         <a href="https://gutierrez88.github.io/" className="valign-wrapper">
             <img className="logoRyan" src="./images/whiteLogo.png" alt="Francisco Gutierrez Logo"></img>
         </a>
     </div>
-    <div className="col s6 m5 pull-m1 right-align">
+    <div className="col s6 center-align">
       Best Score: {props.best}
     </div>
   </div>
