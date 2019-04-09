@@ -4,10 +4,10 @@ import "./style.css";
 function Footer(props) {
     return (
         <div className="innerFooter row valign-wrapper">
-            <div className="first col s6 push-s2">
+            <div className="first col s6 center-align">
                 Wins: {props.wins}
             </div>
-            <div className="third col s6 pull-s2 right-align">
+            <div className="third col s6 center-align">
                 Loses: {props.loses}
             </div>
         </div>
