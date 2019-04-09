@@ -2,14 +2,18 @@ import React from "react";
 import Top from "./components/Top";
 import Score from "./components/Score";
 import Game from "./components/Game";
+import Footer from "./components/Footer";
 import pictures from "./pictures.json";
+import "./App.css";
 
 class App extends React.Component {
   state = {
     pictures,
     clicked: [],
     current: 0,
-    best: 0
+    best: 0,
+    wins: 0,
+    loses: 0
   };
 
   handleScore = id => {
@@ -37,7 +41,8 @@ class App extends React.Component {
                   }
                 ),
                 current: 0,
-                clicked: []
+                clicked: [],
+                wins: this.state.wins + 1
               })
             }
           }
@@ -61,7 +66,8 @@ class App extends React.Component {
                   }
                 ),
                 current: 0,
-                clicked: []
+                clicked: [],
+                wins: this.state.wins + 1
               })
             }
           }
@@ -75,7 +81,8 @@ class App extends React.Component {
           }
         ),
         current: 0,
-        clicked: []
+        clicked: [],
+        loses: this.state.loses + 1
       })
     };
 
@@ -97,6 +104,7 @@ class App extends React.Component {
           />
         ))}
         </div>
+          <Footer wins={this.state.wins} loses={this.state.loses} />
       </div>
     )
   }
