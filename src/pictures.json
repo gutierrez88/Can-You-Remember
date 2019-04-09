@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "image": "./images/bigBang.jpeg"
+    },
+    {
+      "id": 2,
+      "image": "./images/breakingBad.jpeg"
+    },
+    {
+      "id": 3,
+      "image": "./images/community.jpeg"
+    },
+    {
+      "id": 4,
+      "image": "./images/download.jpeg"
+    },
+    {
+      "id": 5,
+      "image": "./images/fireFly.jpg"
+    },
+    {
+      "id": 6,
+      "image": "./images/GOT.jpeg"
+    },
+    {
+      "id": 7,
+      "image": "./images/himym.jpeg"
+    },
+    {
+      "id": 8,
+      "image": "./images/parksAndRec.jpg"
+    },
+    {
+      "id": 9,
+      "image": "./images/SOA.png"
+    },
+    {
+      "id": 10,
+      "image": "./images/theChapelShow.jpeg"
+    },
+    {
+      "id": 11,
+      "image": "./images/theOffice.jpeg"
+    },
+    {
+      "id": 12,
+      "image": "./images/westWorld.png"
+    }
+  ]
+  
