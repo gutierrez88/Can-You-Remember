@@ -74,6 +74,7 @@ class App extends React.Component {
         )
       };
     }else{
+      alert("You did not follow directions and now you have lost, Good luck next time!")
       this.setState({
         pictures: this.state.pictures.sort( 
           function(a,b) { 
